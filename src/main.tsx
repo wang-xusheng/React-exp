@@ -6,8 +6,5 @@ import './index.css'
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <App />
-    {/* <Count></Count> */}
-    {/* <Todos></Todos> */}
-    {/* {<UpdateName></UpdateName>} */}
   </StrictMode>,
 )

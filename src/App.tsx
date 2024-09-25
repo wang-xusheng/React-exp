@@ -10,10 +10,6 @@ async function send(message:string) {
   return {message, sending: false, code: Math.random() > 0.5 ? 0 : 1};
 }
 
-async function sleep(time:number) {
-  await new Promise((resolve) => setTimeout(resolve, time));
-}
-
 const App = ()=>{
   const [messages, setMessages] = useState<Message[]>([]);
   const [optimisticMessages, addOptimisticMessage] = useOptimistic<Message[], string>(
@@ -35,7 +31,6 @@ const App = ()=>{
         addOptimisticMessage(message as string);
         const res = await send(message as string);
         setMessages((messages) => [...messages, res]);
-        await sleep(5000);
       }}
     >
       <input type="text" name="message" />

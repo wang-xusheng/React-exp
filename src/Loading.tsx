@@ -24,7 +24,7 @@ function UpdateName() {
       <div>
         <input value={name} onChange={(event) => setName(event.target.value)} />
         <button onClick={handleSubmit} disabled={isPending} style={{ margin:10, backgroundColor: isPending ? 'gray' : 'green', color: 'white'}}>
-          Update
+          {isPending ?'loading':'Update'}
         </button>
         {error && <p>提交错误</p>}
       </div>
